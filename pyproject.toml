@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "nn"
+version = "0.1.0"
+description = ""
+authors = ["sunnyayyl <sunny.ayyl@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+jax = { extras = ["cuda12"], version = "^0.4.31" }
+equinox = "^0.11.4"
+torch = { version = "^2.4.0+cu124", source = "pytorch-cu124" }
+torchvision = { version = "^0.19.0+cu124", source = "pytorch-cu124" }
+torchaudio = { version = "^2.4.0+cu124", source = "pytorch-cu124" }
+optax = "^0.2.3"
+jupyter = "^1.0.0"
+matplotlib = "^3.9.1.post1"
+
+
+[[tool.poetry.source]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+priority = "explicit"
+
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
